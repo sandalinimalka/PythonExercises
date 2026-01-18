@@ -12,4 +12,5 @@ average = ((number1 + number2 + number3) / 3)
 
 print("Sum is " + str(summation))
 print("Product is " + str(product))
-print("Average is" + str(average))
+print("Average is " + str(average))
+
