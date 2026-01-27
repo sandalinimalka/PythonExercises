@@ -14,10 +14,3 @@ elif cabin_class == "C" :
 
 else:
     print("Invalid cabin class.")
-
-
-
-
-
-
-
