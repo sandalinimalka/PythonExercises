@@ -1,7 +1,9 @@
+import math
+
 def pizza_unit_price(diameter, price):
     diameter_in_meters = diameter / 100
     radius = diameter_in_meters / 2
-    area = (22/7) * (radius * radius)
+    area = math.pi * (radius * radius)
     return  price / area
 
 diameter1_input = float(input("Enter the diameter of the 1st pizza (in centimeters): "))
