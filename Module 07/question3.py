@@ -14,9 +14,11 @@ while choose != "quit":
 
     elif choose == "fetch":
         icao_code = input("Enter ICAO code: ")
-        print(airport_details[icao_code])
+        if icao_code in airport_details:
+            print(airport_details[icao_code])
+        else:
+            print("ICAO Code not found!")
 
     choose = input("\nWhat do you choose? (new/fetch/quit): ")
 
-else:
-    print("Execution Ends!")
+print("Execution Ends!")
