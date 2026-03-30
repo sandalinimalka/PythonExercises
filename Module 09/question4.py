@@ -11,7 +11,7 @@ class Car:
         self.current_speed += change
         if self.current_speed > self.max_speed:
             self.current_speed = self.max_speed
-        if self.current_speed < 0:
+        elif self.current_speed < 0:
             self.current_speed = 0
 
     def drive(self, hours):
@@ -31,14 +31,15 @@ while True:
     for car in cars:
         car.accelerate(random.randint(-10, 15))
         car.drive(1)
-    if any(car.travelled_distance >= 10000 for car in cars):
-        break
+        if car.travelled_distance >= 10000:
+            break
+    break
 
 # Print results
 print(f"Race finished after {hour} hours!\n")
-print(f"{'Reg. number':<12} {'Max speed':>10} {'Curr. speed':>12} {'Distance':>12}")
+print(f"{'Reg. number':<12} {'Max speed':>10} {'Curr. speed':>14} {'Distance':>10}")
 print("-" * 50)
 for car in sorted(cars, key=lambda c: c.travelled_distance, reverse=True):
-    print(f"{car.registration_number:<12} {car.max_speed:>9} km/h "
-          f"{car.current_speed:>9} km/h "
-          f"{car.travelled_distance:>9.1f} km")
+    print(f"{car.registration_number:<12} {car.max_speed:>5} km/h "
+          f"{car.current_speed:>5} km/h "
+          f"{car.travelled_distance:>10.1f} km")
